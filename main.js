@@ -3,6 +3,11 @@ let operator = '';
 let numTwo = '';
 const $operator = document.querySelector('#operator');
 const $result = document.querySelector('#result');
+//querySelector과 getElementById의 차이점은 querySelector은 css선택자까지 입력해줘야하고
+//getElementById는 기호없이 아이디만 입력해야한다 즉, id 있는 요소에만 사용 가능하다.
+//html 요소를 변수로 사용할 경우 같은 이름의 변수가 또 있다면 앞에 $를 붙여 구분 시킨다. ex) operator
+
+
 
 const onClickNumber = (number) => () => {
   if (operator) {
@@ -31,19 +36,44 @@ const onClickClear = () => () => {
   numOne = operator = numTwo = '';
 }
 
+//if문
+// const onClickCalculator = () => () => {
+//   if (operator == '+') {
+//     $result.value = parseInt(numOne) + parseInt(numTwo);
+//     console.log($result.value);
+//   } else if (operator == '-') {
+//     $result.value = parseInt(numOne) - parseInt(numTwo);
+//     console.log($result.value);
+//   } else if (operator == '*') {
+//     $result.value = parseInt(numOne) * parseInt(numTwo);
+//     console.log($result.value);
+//   } else if (operator == '/') {
+//     $result.value = parseInt(numOne) / parseInt(numTwo);
+//     console.log($result.value);
+//   }
+// }
+
+//switch문
 const onClickCalculator = () => () => {
-  if (operator == '+') {
-    $result.value = parseInt(numOne) + parseInt(numTwo);
-    console.log($result.value);
-  } else if (operator == '-') {
-    $result.value = parseInt(numOne) - parseInt(numTwo);
-    console.log($result.value);
-  } else if (operator == '*') {
-    $result.value = parseInt(numOne) * parseInt(numTwo);
-    console.log($result.value);
-  } else if (operator == '/') {
-    $result.value = parseInt(numOne) / parseInt(numTwo);
-    console.log($result.value);
+  switch (operator) {
+    case '+':
+      $result.value = parseInt(numOne) + parseInt(numTwo);
+      console.log($result.value);
+      break;
+    case '-':
+      $result.value = parseInt(numOne) - parseInt(numTwo);
+      console.log($result.value);
+      break;
+    case '*':
+      $result.value = parseInt(numOne) * parseInt(numTwo);
+      console.log($result.value);
+      break;
+    case '/':
+      $result.value = parseInt(numOne) / parseInt(numTwo);
+      console.log($result.value);
+      break;
+    default:
+      break;
   }
 }
 
